@@ -293,6 +293,8 @@ dot-text, dot-icon { display: inline-block; vertical-align: middle; }
 .sim-line { display: flex; justify-content: space-between; padding: 0 2px; font-weight: 600; }
 .sim-actions { display: flex; gap: 4px; }
 .sim-actions i { flex: 1; padding: 5px 0; border-radius: 6px; text-align: center; font-style: normal; font-weight: 600; }
+.shape-sample { display: grid; place-items: center; height: 72px; background: var(--bg); }
+.shape-sample b { display: block; width: 56%; height: 28px; background: var(--mute); }
 .density-card small + small { color: var(--fg); }
 .density-sample { display: grid; padding: 8px; border-radius: 8px; background: var(--bg); }
 .density-sample i { display: block; border-radius: 4px; background: var(--raise); }
@@ -393,36 +395,36 @@ td.use { font: 400 12px/1.4 "Instrument Sans", system-ui, sans-serif; color: var
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 
 /* The preview shows the system being built; only it reads --ds-*, --p-*, --t-* and --s-*. */
-.screen { position: relative; overflow: hidden; font-family: var(--t-body-family); font-size: var(--t-body-size); line-height: var(--t-body-line); font-weight: var(--t-body-weight); background: var(--p-canvas); color: var(--p-fg); border-radius: var(--ds-shape-sheet); padding: var(--s-margin); display: grid; gap: var(--s-gap-l); transition: background var(--ds-motion-duration-standard); }
+.screen { position: relative; overflow: hidden; font-family: var(--t-body-family); font-size: var(--t-body-size); line-height: var(--t-body-line); font-weight: var(--t-body-weight); background: var(--p-canvas); color: var(--p-fg); border-radius: var(--r-shape-sheet); padding: var(--s-margin); display: grid; gap: var(--s-gap-l); transition: background var(--ds-motion-duration-standard); }
 .screen h3 { margin: 0; font-family: var(--t-title-family); letter-spacing: var(--t-title-tracking); font-size: var(--t-title-size); line-height: var(--t-title-line); font-weight: var(--t-title-weight); }
 .screen strong { font-family: var(--t-headline-family); font-size: var(--t-headline-size); line-height: var(--t-headline-line); font-weight: var(--t-headline-weight); }
 .s-head { display: flex; justify-content: space-between; align-items: center; gap: var(--s-gap-m); }
 .s-avatar { display: grid; place-items: center; width: var(--s-control-s); height: var(--s-control-s); border-radius: var(--ds-shape-full); background: var(--p-subtle); color: var(--p-brand); font-size: var(--t-caption-size); font-weight: var(--t-headline-weight); }
-.s-search { display: flex; align-items: center; height: var(--s-control); padding: 0 var(--s-inline-m); border-radius: var(--ds-shape-control); background: var(--p-surface); color: var(--p-fg2); }
+.s-search { display: flex; align-items: center; height: var(--s-control); padding: 0 var(--s-inline-m); border-radius: var(--r-shape-field); background: var(--p-surface); color: var(--p-fg2); border: var(--r-outline-field) solid var(--p-linefield); }
 .s-chips { display: flex; gap: var(--s-gap-s); }
-.s-chip { display: flex; align-items: center; height: var(--s-control-s); padding: 0 var(--s-inline-s); border-radius: var(--ds-shape-full); background: var(--p-surface); font-size: var(--t-caption-size); }
+.s-chip { display: flex; align-items: center; height: var(--s-control-s); padding: 0 var(--s-inline-s); border-radius: var(--r-shape-chip); background: var(--p-surface); font-size: var(--t-caption-size); }
 .s-chip.on { background: var(--p-selected); }
-.s-hero { display: grid; gap: var(--s-gap-s); padding: var(--s-block-l) var(--s-inline-l); border-radius: var(--ds-shape-control); background: var(--p-hero); color: var(--p-onhero); }
+.s-hero { display: grid; gap: var(--s-gap-s); padding: var(--s-block-l) var(--s-inline-l); border-radius: var(--r-shape-card); background: var(--p-hero); color: var(--p-onhero); }
 .s-group { display: grid; gap: var(--s-gap-m); margin-top: max(0px, calc(var(--s-gap-xl) - var(--s-gap-l))); }
-.s-list { display: grid; border-radius: var(--ds-shape-control); background: var(--p-surface); overflow: hidden; }
+.s-list { display: grid; border-radius: var(--r-shape-card); background: var(--p-surface); overflow: hidden; border: var(--r-outline-card) solid var(--p-line); }
 .s-row { display: flex; align-items: center; gap: var(--s-gap-l); padding: var(--s-block-s) var(--s-inline-m); }
 .s-row + .s-row { box-shadow: 0 -1px 0 var(--p-line); }
 .s-row.sel { background: var(--p-selected); }
-.s-thumb { flex: none; width: var(--s-control-s); height: var(--s-control-s); border-radius: var(--ds-shape-control); background: var(--p-subtle); }
+.s-thumb { flex: none; width: var(--s-control-s); height: var(--s-control-s); border-radius: var(--r-shape-control); background: var(--p-subtle); }
 .s-grow { flex: 1; min-width: 0; display: grid; }
 .s-title { font-weight: var(--t-headline-weight); }
 .s-value { font-weight: var(--t-headline-weight); font-variant-numeric: tabular-nums; }
 .s-note { color: var(--p-fg2); font-size: var(--t-caption-size); line-height: var(--t-caption-line); font-weight: var(--t-caption-weight); }
 .s-link { color: var(--p-link); font-size: var(--t-caption-size); }
-.s-input { display: flex; align-items: center; height: var(--s-control); padding: 0 var(--s-inline-m); border-radius: var(--ds-shape-control); background: var(--p-surface); outline: var(--ds-size-focus-ring) solid var(--p-focus); }
-.s-banner { display: flex; justify-content: space-between; align-items: center; gap: var(--s-gap-m); padding: var(--s-block-m) var(--s-inline-m); border-radius: var(--ds-shape-control); background: var(--p-surface); }
+.s-input { display: flex; align-items: center; height: var(--s-control); padding: 0 var(--s-inline-m); border-radius: var(--r-shape-field); background: var(--p-surface); outline: var(--ds-size-focus-ring) solid var(--p-focus); border: var(--r-outline-field) solid var(--p-linefield); }
+.s-banner { display: flex; justify-content: space-between; align-items: center; gap: var(--s-gap-m); padding: var(--s-block-m) var(--s-inline-m); border-radius: var(--r-shape-card); background: var(--p-surface); border: var(--r-outline-card) solid var(--p-line); }
 .s-switch { position: relative; width: calc(var(--t-body-line) * 2); height: var(--t-body-line); border-radius: var(--ds-shape-full); background: var(--p-action); }
 .s-switch::after { content: ""; position: absolute; top: 2px; right: 2px; bottom: 2px; aspect-ratio: 1; border-radius: var(--ds-shape-full); background: var(--p-on); }
-.s-btn { height: var(--s-control); border: 0; border-radius: var(--ds-shape-control); background: var(--p-action); color: var(--p-on); font: inherit; }
+.s-btn { height: var(--s-control); border: 0; border-radius: var(--r-shape-button); background: var(--p-action); color: var(--p-on); font: inherit; }
 .s-actions { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: var(--s-gap-m); }
 .s-nav { display: flex; justify-content: space-between; gap: var(--s-gap-m); padding-top: var(--s-block-s); box-shadow: 0 -1px 0 var(--p-line); color: var(--p-fg2); font-size: var(--t-caption-size); line-height: var(--t-caption-line); }
 .s-nav span { display: grid; justify-items: center; gap: var(--s-gap-s); }
-.s-nav i { width: var(--s-inline-m); height: var(--s-inline-m); border-radius: var(--ds-shape-control); background: currentColor; opacity: .4; }
+.s-nav i { width: var(--s-inline-m); height: var(--s-inline-m); border-radius: var(--r-shape-control); background: currentColor; opacity: .4; }
 .s-nav .on { color: var(--p-nav); }
 .s-nav .on i { opacity: 1; }
 .s-tags { display: flex; flex-wrap: wrap; gap: var(--s-gap-m); font-size: var(--t-caption-size); line-height: var(--t-caption-line); }
@@ -723,9 +725,9 @@ const BRAND_EXAMPLES = [
   { key: 'duolingo', name: 'Duolingo', category: 'Education', brand: '#58cc02', secondary: '#1cb0f6', secondaryShare: 'support', expression: 'balanced', measured: '20%', font: 'Feather Bold, DIN Next Rounded', type: { text: 'nunito', display: 'same', strongWeight: 700 } },
   { key: 'slack', name: 'Slack', category: 'Productivity', brand: '#4a154b', secondary: '#1264a3', secondaryShare: 'support', expression: 'balanced', measured: '20%', font: 'Larsseit, Lato', type: { text: 'lato', display: 'same', strongWeight: 700 } },
   { key: 'monzo', name: 'Monzo', category: 'Fintech', brand: '#ff5a4b', secondary: '#1d7fa6', secondaryShare: 'balanced', expression: 'balanced', measured: '30%', font: 'Oldschool Grotesk, Monzo Sans', type: { text: 'inter', display: 'bricolage', strongWeight: 600 } },
-  { key: 'klarna', name: 'Klarna', category: 'Shopping', brand: '#4b3aa8', secondary: '#ffa8cd', secondaryShare: 'balanced', expression: 'balanced', measured: '30-35%', gap: 'The real main button is ink', font: 'Klarna Title, Klarna Text', type: { text: 'instrument', display: 'same', strongWeight: 600 } },
-  { key: 'calm', name: 'Calm', category: 'Health', brand: '#2f6fdb', secondary: '#7b5ce0', secondaryShare: 'balanced', expression: 'expressive', measured: '35-40%', gap: 'No gradients, and the real main button is white', font: null, type: { text: 'figtree', display: 'same', strongWeight: 600 } },
-  { key: 'ubereats', name: 'Uber Eats', category: 'Food delivery', brand: '#06c167', secondary: '#ff6937', secondaryShare: 'balanced', expression: 'quiet', measured: '35-40%', gap: 'The real main button is black', font: 'Uber Move', type: { text: 'barlow', display: 'same', strongWeight: 600 } },
+  { key: 'klarna', name: 'Klarna', category: 'Shopping', brand: '#4b3aa8', secondary: '#ffa8cd', secondaryShare: 'balanced', expression: 'balanced', measured: '30-35%', mainAction: 'neutral', font: 'Klarna Title, Klarna Text', type: { text: 'instrument', display: 'same', strongWeight: 600 } },
+  { key: 'calm', name: 'Calm', category: 'Health', brand: '#2f6fdb', secondary: '#7b5ce0', secondaryShare: 'balanced', expression: 'expressive', measured: '35-40%', mainAction: 'neutral', gap: 'No gradients, and the real app is dark-toned', font: null, type: { text: 'figtree', display: 'same', strongWeight: 600 } },
+  { key: 'ubereats', name: 'Uber Eats', category: 'Food delivery', brand: '#06c167', secondary: '#ff6937', secondaryShare: 'balanced', expression: 'quiet', measured: '35-40%', mainAction: 'neutral', font: 'Uber Move', type: { text: 'barlow', display: 'same', strongWeight: 600 } },
   { key: 'booking', name: 'Booking.com', category: 'Travel', brand: '#003b95', secondary: '#006ce4', secondaryShare: 'duo', expression: 'balanced', measured: '45%', font: 'Booking Sans, system fonts', type: { text: 'system', display: 'same', strongWeight: 700 } },
   { key: 'headspace', name: 'Headspace', category: 'Health', brand: '#ff7a00', secondary: '#0a63f0', secondaryShare: 'duo', expression: 'expressive', measured: '45-50%', gap: 'Illustration carries much of the real brand', font: null, type: { text: 'dmsans', display: 'same', strongWeight: 600 } },
 ]
@@ -836,6 +838,7 @@ function expand(config) {
       'fg.onHero': onFor(ramp.colors[chosen.action]),
       'fg.onAction': onFor(ramp.colors[chosen.action]),
       'border.subtle': gray[dark ? 7 : 2],
+      'border.control': gray[dark ? 4 : 5],
       'border.focus': ramp.colors[chosen.focus],
       'action.primary': ramp.colors[chosen.action],
       'fg.success': fgStatus(statusRamps.success),
@@ -862,6 +865,12 @@ function expand(config) {
         'bg.brandSecondarySubtle': quiet ? surface : ramp2.colors[dark ? 9 : 1],
       })
     }
+    // A neutral main action is the inverse of the screen: ink on light, white on dark.
+    if (config.mainAction === 'neutral') {
+      const inverse = gray[dark ? 0 : 10]
+      roles[mode]['action.primary'] = inverse
+      roles[mode]['fg.onAction'] = onFor(inverse)
+    }
     accents.forEach((r, i) => { roles[mode][`accent.${['first', 'second'][i]}`] = r.colors[dark ? 3 : 6] })
   }
 
@@ -883,6 +892,8 @@ function expand(config) {
     pair('fg.onHero', 'bg.hero', 4.5)
     pair('fg.primary', 'bg.selected', 4.5)
     pair('border.focus', 'bg.canvas', 3)
+    pair('border.control', 'bg.canvas', 3)
+    pair('border.control', 'bg.surface', 3)
     pair('fg.success', 'bg.surface', 4.5)
     pair('fg.warning', 'bg.surface', 4.5)
     pair('fg.danger', 'bg.surface', 4.5)
@@ -1015,16 +1026,57 @@ function buildSpace(space) {
 
 const exportSpace = ({ roles }) => Object.fromEntries(Object.entries(roles).flatMap(([group, values]) => Object.entries(values).map(([name, value]) => [`${group}.${name}`, value])))
 
+// Turns a corner style and a few choices into shape roles.
+const SHAPE_DEFAULTS = { style: 'soft', button: 'corner', field: 'corner', chip: 'pill', outline: 'fields', outlineWidth: 1, custom: {} }
+
+const FULL = 999
+
+// Radii in px by piece size.
+const SHAPE_STYLES = {
+  square: { label: 'SQUARE', use: 'Editorial and strict', control: 0, card: 0, sheet: 0 },
+  firm: { label: 'FIRM', use: 'Precise tools', control: 4, card: 8, sheet: 12 },
+  soft: { label: 'SOFT', use: 'Most products', control: 12, card: 20, sheet: 28 },
+  round: { label: 'ROUND', use: 'Friendly and playful', control: 20, card: 28, sheet: 36 },
+}
+
+const SHAPE_ROWS = { control: 'Buttons and fields', card: 'Cards and lists', sheet: 'Sheets and panels' }
+
+function buildShape(shape, controlHeight) {
+  const preset = SHAPE_STYLES[shape.style] ?? SHAPE_STYLES[SHAPE_DEFAULTS.style]
+  const custom = shape.custom ?? {}
+  const size = Object.fromEntries(Object.keys(SHAPE_ROWS).map((key) => [key, custom[key] ?? preset[key]]))
+  const corner = (choice) => (choice === 'pill' ? FULL : size.control)
+  const width = shape.outline === 'none' ? 0 : shape.outlineWidth
+  const roles = {
+    'shape.control': size.control,
+    'shape.card': size.card,
+    'shape.sheet': size.sheet,
+    'shape.full': FULL,
+    'shape.button': corner(shape.button),
+    'shape.field': corner(shape.field),
+    'shape.chip': corner(shape.chip),
+    'outline.field': width,
+    'outline.card': shape.outline === 'all' ? width : 0,
+  }
+  const half = Math.floor(controlHeight / 2)
+  const checks = [
+    { name: 'Bigger piece, bigger corner', ok: size.control <= size.card && size.card <= size.sheet, detail: `${size.control}, ${size.card}, ${size.sheet} px` },
+    { name: 'Corner on a control', ok: size.control < half, detail: size.control < half ? `${size.control} px, a pill starts at ${half} px` : `${size.control} px already reads as a pill at ${half} px` },
+    { name: 'Field edge', ok: shape.outline !== 'none', detail: shape.outline === 'none' ? 'Fields need a visible edge; add an outline' : `Outlined at ${width} px` },
+  ]
+  return { roles, checks }
+}
+
 
 const SEEDS = [[0.55, 0.2, 262], [0.63, 0.2, 40], [0.87, 0.18, 100], [0.6, 0.16, 160], [0.58, 0.22, 350], [0.3, 0.09, 250]].map(([l, c, h]) => colorCss(fromOklch(l, c, h)))
-const DEFAULTS = { brand: SEEDS[0], secondary: null, secondaryShare: 'support', vivid: 1, neutral: 0.008, harmony: 'none', expression: 'balanced', overrides: {}, type: TYPE_DEFAULTS, space: SPACE_DEFAULTS }
+const DEFAULTS = { brand: SEEDS[0], secondary: null, secondaryShare: 'support', vivid: 1, neutral: 0.008, harmony: 'none', expression: 'balanced', mainAction: 'brand', overrides: {}, type: TYPE_DEFAULTS, space: SPACE_DEFAULTS, shape: SHAPE_DEFAULTS }
 const KEY = 'ds-configurador'
 const load = () => {
   try {
     const stored = JSON.parse(localStorage.getItem(KEY))
     const { rhythm, ...storedSpace } = stored?.space ?? {} // Rhythm became part of density.
     const density = { comfortable: 'regular', spacious: 'relaxed' }[storedSpace.density] ?? storedSpace.density
-    return { ...DEFAULTS, ...stored, type: { ...TYPE_DEFAULTS, ...stored?.type }, space: { ...SPACE_DEFAULTS, ...storedSpace, ...(density ? { density } : {}) } }
+    return { ...DEFAULTS, ...stored, type: { ...TYPE_DEFAULTS, ...stored?.type }, space: { ...SPACE_DEFAULTS, ...storedSpace, ...(density ? { density } : {}) }, shape: { ...SHAPE_DEFAULTS, ...stored?.shape } }
   } catch { return { ...DEFAULTS } }
 }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(config)) } catch {} }
@@ -1034,10 +1086,10 @@ const SECONDARY_ROLES = [['secondaryAction', 'SECONDARY ACTION'], ['secondaryLin
 const USES = {
   'bg.canvas': 'Screen background', 'bg.surface': 'Cards and grouped areas', 'bg.brandSubtle': 'Soft brand highlight', 'bg.selected': 'Selected item',
   'fg.primary': 'Main text and icons', 'fg.secondary': 'Dates and secondary text', 'fg.brand': 'Links and brand text', 'fg.onAction': 'Text on an action',
-  'border.subtle': 'Light outline', 'border.focus': 'Focus ring', 'action.primary': 'Primary action',
+  'border.subtle': 'Light outline', 'border.control': 'Outline of fields', 'border.focus': 'Focus ring', 'action.primary': 'Primary action',
   'fg.success': 'Something went well', 'fg.warning': 'Needs attention', 'fg.danger': 'Error or destructive action', 'action.secondary': 'Secondary brand action', 'fg.link': 'Links and text buttons', 'fg.navActive': 'Active navigation', 'bg.hero': 'Brand header and hero', 'fg.onHero': 'Text on the hero', 'fg.onActionSecondary': 'Text on a secondary action', 'fg.brandSecondary': 'Secondary brand text', 'bg.brandSecondarySubtle': 'Soft secondary highlight', 'accent.first': 'Accent', 'accent.second': 'Accent',
 }
-const FIXED_GROUPS = { SHAPE: ['shape.', 'material.', 'elevation.'], MOTION: ['motion.'] }
+const FIXED_GROUPS = { DEPTH: ['material.', 'elevation.'], MOTION: ['motion.'] }
 const FIXED_TOKENS = [{"name":"layout.gap.s","css":"4px","description":"Between pieces of the same unit."},{"name":"layout.gap.m","css":"8px","description":"Between items in a list or group."},{"name":"layout.gap.l","css":"16px","description":"Between groups."},{"name":"layout.gap.xl","css":"32px","description":"Between sections."},{"name":"layout.inset.s","css":"8px","description":"Inner margin of small pieces."},{"name":"layout.inset.m","css":"16px","description":"Standard inner margin."},{"name":"layout.inset.l","css":"24px","description":"Inner margin of cards and sheets."},{"name":"shape.control","css":"12px","description":"Buttons and fields."},{"name":"shape.card","css":"20px","description":"Cards."},{"name":"shape.sheet","css":"28px","description":"Sheets and panels."},{"name":"shape.full","css":"999px","description":"Pills and circular buttons."},{"name":"size.control.s","css":"32px","description":"Dense controls, pointer only."},{"name":"size.control.m","css":"44px","description":"Standard; minimum touch target."},{"name":"size.focusRing","css":"2px","description":"Focus ring thickness."},{"name":"material.blur","css":"32px","description":"Glass blur."},{"name":"text.caption.family","css":"\"Inter Variable\", Inter, \"PingFang SC\", system-ui, sans-serif"},{"name":"text.caption.size","css":"12px"},{"name":"text.caption.line","css":"16px"},{"name":"text.caption.weight","css":"400"},{"name":"text.body.family","css":"\"Inter Variable\", Inter, \"PingFang SC\", system-ui, sans-serif"},{"name":"text.body.size","css":"14px"},{"name":"text.body.line","css":"20px"},{"name":"text.body.weight","css":"500"},{"name":"text.headline.family","css":"\"Inter Variable\", Inter, \"PingFang SC\", system-ui, sans-serif"},{"name":"text.headline.size","css":"17px"},{"name":"text.headline.line","css":"22px"},{"name":"text.headline.weight","css":"600"},{"name":"text.title.family","css":"\"Inter Variable\", Inter, \"PingFang SC\", system-ui, sans-serif"},{"name":"text.title.size","css":"26px"},{"name":"text.title.line","css":"32px"},{"name":"text.title.weight","css":"600"},{"name":"motion.duration.fast","css":"120ms","description":"State changes."},{"name":"motion.duration.standard","css":"200ms","description":"Small pieces entering."},{"name":"motion.duration.slow","css":"320ms","description":"Screen or sheet changes."},{"name":"motion.ease.standard","css":"cubic-bezier(0.2, 0, 0, 1)","description":"Movement within a screen."},{"name":"motion.ease.enter","css":"cubic-bezier(0.05, 0.7, 0.1, 1)","description":"Something entering."},{"name":"motion.ease.exit","css":"cubic-bezier(0.3, 0, 0.8, 0.15)","description":"Something leaving."},{"name":"elevation.raised","css":"0px 1px 4px 0px rgba(0, 0, 0, 0.14)","description":"Piece slightly above the surface."},{"name":"elevation.overlay","css":"0px 8px 28px 0px rgba(0, 0, 0, 0.28)","description":"Popover, sheet, glass panel."}]
 const SEEN_KEY = 'ds-configurador-vistos'
 const loadSeen = () => { try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY))) } catch { return new Set() } }
@@ -1050,7 +1102,7 @@ const MIN_MAIN = 380
 const loadUi = () => { try { return { ...UI_DEFAULTS, ...JSON.parse(localStorage.getItem(UI_KEY)) } } catch { return { ...UI_DEFAULTS } } }
 const saveUi = () => { try { localStorage.setItem(UI_KEY, JSON.stringify(ui)) } catch {} }
 let ui = loadUi()
-let config = load(), place = location.hash.slice(1) || 'examples', editing = 'light', seen = loadSeen(), lastPlace = 'examples', zoom = 1, slot = 'brand', picker = { open: false, h: 0, s: 0, v: 0 }, dragging, result, type, space
+let config = load(), place = location.hash.slice(1) || 'examples', editing = 'light', seen = loadSeen(), lastPlace = 'examples', zoom = 1, slot = 'brand', picker = { open: false, h: 0, s: 0, v: 0 }, dragging, result, type, space, shape
 
 const $ = (id) => document.getElementById(id)
 const h = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild }
@@ -1120,12 +1172,15 @@ const PANELS = [
     ${result.accents.map((r) => rampHtml(r.colors)).join('')}`,
   () => `${heading('HOW MUCH BRAND SHOWS?')}
     ${seg('expression', [['quiet', 'QUIET'], ['balanced', 'BALANCED'], ['expressive', 'EXPRESSIVE']])}
+    ${dot('MAIN ACTION', 1.1)}${seg('mainAction', [['brand', 'BRAND'], ['neutral', 'NEUTRAL']])}
+    ${config.mainAction === 'neutral' ? '<p class="note">Ink on light, white on dark, like Uber Eats and Klarna. The brand stays in heroes, links and focus.</p>' : ''}
     <div class="seg" data-editing>${[['light', 'sol', 'Light theme'], ['dark', 'lua', 'Dark theme']].map(([mode, icon, label]) => `<button data-mode="${mode}" class="${editing === mode ? 'on' : ''}" aria-label="${label}"><dot-icon name="${icon}" dot="1.1"></dot-icon></button>`).join('')}</div>
     ${[...ROLES, ...(result.ramp2 ? SECONDARY_ROLES : [])].map(([role, label]) => {
-      const off = config.expression === 'quiet' && !['action', 'focus', 'secondaryAction'].includes(role)
+      const neutralAction = role === 'action' && config.mainAction === 'neutral'
+      const off = neutralAction || (config.expression === 'quiet' && !['action', 'focus', 'secondaryAction'].includes(role))
       const roleRamp = role.startsWith('secondary') || (role === 'selected' && result.ramp2 && SHARES[config.secondaryShare].tier >= 1) ? result.ramp2 : result.ramp
       return `<div class="card" style="${off ? 'opacity:.5' : ''}"><div class="row between">${dot(label, 1.1)}<span class="mute">${dot(`${STEPS[result.picks.light[role]]} · ${STEPS[result.picks.dark[role]]}`, 1.1)}</span></div>
-      ${off ? '<p class="note">Neutral in the Quiet option.</p>' : `<div data-role="${role}">${rampHtml(roleRamp.colors, { pick: true, anchor: result.picks[editing][role] })}</div>`}</div>`
+      ${off ? `<p class="note">${neutralAction ? 'Neutral main action. This still sets the hero color.' : 'Neutral in the Quiet option.'}</p>` : `<div data-role="${role}">${rampHtml(roleRamp.colors, { pick: true, anchor: result.picks[editing][role] })}</div>`}</div>`
     }).join('')}`,
   () => {
     const failed = result.checks.filter((c) => !c.ok)
@@ -1221,23 +1276,24 @@ const densityCard = ([key, density]) => {
   </button>`
 }
 
-const tokenRow = (group, name, use) => {
-  const id = `${group}.${name}`, value = space.roles[group][name], changed = config.space.custom[id] !== undefined
+const stepRow = (scope, id, label, use, value) => {
+  const changed = config[scope].custom[id] !== undefined
   return `<div class="token-row ${changed ? 'changed' : ''}">
-    <span class="token-name">${dot(name.toUpperCase(), 1.1)}<small>${use}${changed ? ' · Custom' : ''}</small></span>
+    <span class="token-name">${dot(label, 1.1)}<small>${use}${changed ? ' · Custom' : ''}</small></span>
     <i class="token-bar" style="width:${Math.min(value, 96)}px"></i>
     <span class="stepper">
-      <button class="tool" data-step="${id}" data-by="-1" aria-label="Decrease ${id}">−</button>
-      <input class="step-input" type="number" min="0" max="${STEP_LIMIT}" data-token="${id}" value="${value}" aria-label="${id} in px">
-      <button class="tool" data-step="${id}" data-by="1" aria-label="Increase ${id}">+</button>
+      <button class="tool" data-step="${id}" data-step-scope="${scope}" data-by="-1" aria-label="Decrease ${id}">−</button>
+      <input class="step-input" type="number" min="0" max="${STEP_LIMIT}" data-token="${id}" data-step-scope="${scope}" value="${value}" aria-label="${id} in px">
+      <button class="tool" data-step="${id}" data-step-scope="${scope}" data-by="1" aria-label="Increase ${id}">+</button>
     </span>
   </div>`
 }
+const tokenRow = (group, name, use) => stepRow('space', `${group}.${name}`, name.toUpperCase(), use, space.roles[group][name])
 
 const densityPanel = () => `${heading('HOW DENSE IS THE PRODUCT?')}
   <div class="shares">${Object.entries(DENSITIES).map(densityCard).join('')}</div>
   ${dot('TOUCH TARGET', 1.1)}${spaceSeg('target', [[44, '44 IOS'], [48, '48 ANDROID'], [24, '24 POINTER']])}
-  <div class="row between">${heading('FINE TUNE')}${Object.keys(config.space.custom).length ? `<button class="btn" data-action="resetSpace">${dot('RESET TO PRESET')}</button>` : ''}</div>
+  <div class="row between">${heading('FINE TUNE')}${Object.keys(config.space.custom).length ? `<button class="btn" data-action="resetCustom" data-scope-name="space">${dot('RESET TO PRESET')}</button>` : ''}</div>
   <p class="note">Start from the preset and change any value. The buttons step by the ${config.space.unit} px unit; you can also type a value.</p>
   ${SPACE_GROUPS.map(({ key, label, rows }) => `<div class="card">${dot(label, 1.1)}${Object.entries(rows).map(([name, use]) => tokenRow(key, name, use)).join('')}</div>`).join('')}
   ${measureNote}
@@ -1251,7 +1307,7 @@ const layoutPanel = () => `${heading('HOW DOES THE SCREEN ORGANIZE?')}
   ${measureNote}
   ${checkList(space.checks)}`
 
-const exampleConfig = ({ brand, secondary, secondaryShare, expression }) => ({ brand, secondary, secondaryShare, expression, vivid: 1, neutral: DEFAULTS.neutral, harmony: 'none', overrides: {} })
+const exampleConfig = ({ brand, secondary, secondaryShare, expression, mainAction = 'brand' }) => ({ brand, secondary, secondaryShare, expression, mainAction, vivid: 1, neutral: DEFAULTS.neutral, harmony: 'none', overrides: {} })
 const isExample = (example) => Object.entries(exampleConfig(example)).every(([k, v]) => k === 'overrides' ? !Object.keys(config.overrides ?? {}).length : config[k] === v)
   && Object.entries(example.type).every(([k, v]) => config.type[k] === v)
 
@@ -1296,12 +1352,38 @@ const mixPanel = () => {
 
 const [brandPanel, rampPanel, neutralPanel, supportPanel, usesPanel, exportPanel] = PANELS
 
+const shapeCard = ([key, style]) => {
+  const { roles } = buildShape({ ...config.shape, style: key, custom: {} }, space.roles['size.control'].m)
+  return `<button class="share density-card ${config.shape.style === key ? 'on' : ''}" data-corner="${key}">
+    ${dot(style.label, 1.1)}
+    <span class="shape-sample" style="border-radius:${roles['shape.card']}px"><b style="border-radius:${roles['shape.control']}px"></b></span>
+    <small>${style.use}</small>
+    <small>${style.control}, ${style.card}, ${style.sheet} px</small>
+  </button>`
+}
+
+const cornersPanel = () => `${heading('HOW SOFT ARE THE PIECES?')}
+  <div class="shares">${Object.entries(SHAPE_STYLES).map(shapeCard).join('')}</div>
+  <div class="row between">${heading('FINE TUNE')}${Object.keys(config.shape.custom).length ? `<button class="btn" data-action="resetCustom" data-scope-name="shape">${dot('RESET TO PRESET')}</button>` : ''}</div>
+  <p class="note">Start from the preset and change any corner. The buttons step by 2 px; you can also type a value.</p>
+  <div class="card">${dot('CORNERS', 1.1)}${Object.entries(SHAPE_ROWS).map(([id, use]) => stepRow('shape', id, id.toUpperCase(), use, shape.roles[`shape.${id}`])).join('')}</div>
+  ${checkList(shape.checks)}`
+
+const shapeSeg = (key, options) => scopedSeg('shape', key, options)
+const pillChoice = [['corner', 'CORNER'], ['pill', 'PILL']]
+const pillsPanel = () => `${heading('WHICH PIECES GO FULLY ROUND?')}
+  <p class="note">A pill is a corner of ${FULL} px. Corner follows the control value from the last step.</p>
+  ${dot('BUTTONS', 1.1)}${shapeSeg('button', pillChoice)}
+  ${dot('FIELDS', 1.1)}${shapeSeg('field', pillChoice)}
+  ${dot('CHIPS AND TAGS', 1.1)}${shapeSeg('chip', pillChoice)}`
+
+const outlinesPanel = () => `${heading('WHEN DOES A PIECE NEED A LINE?')}
+  ${dot('WHERE', 1.1)}${shapeSeg('outline', [['none', 'NONE'], ['fields', 'FIELDS'], ['all', 'FIELDS AND CARDS']])}
+  ${config.shape.outline === 'none' ? '' : `${dot('THICKNESS', 1.1)}${shapeSeg('outlineWidth', [[1, '1 PX'], [1.5, '1.5 PX'], [2, '2 PX']])}`}
+  <p class="note">Fields use border.control, which holds 3:1 against the screen. Cards use the lighter border.subtle because their edge is decorative.</p>
+  ${checkList(shape.checks)}`
+
 const AREAS = {
-  shape: ['SHAPE', 'The character of the pieces: firm, soft or round.', [
-    ['Corners by size', 'Bigger piece, bigger corner.', '12, 20, 28'],
-    ['Pills', 'When a piece becomes fully round.', '999 px'],
-    ['Outlines', 'When to use a line, and how thick.', 'To define'],
-  ]],
   depth: ['DEPTH', 'What sits above what.', [
     ['Layers', 'How many levels between the screen and a sheet.', '3'],
     ['Shadows', 'One per level, with a rule for dark theme.', '2'],
@@ -1345,6 +1427,9 @@ const ITEMS = [
   { key: 'unit', group: 'SPACING', label: 'UNIT', panel: unitPanel },
   { key: 'density', group: 'SPACING', label: 'DENSITY', panel: densityPanel },
   { key: 'layout', group: 'SPACING', label: 'LAYOUT', panel: layoutPanel },
+  { key: 'corners', group: 'SHAPE', label: 'CORNERS', panel: cornersPanel },
+  { key: 'pills', group: 'SHAPE', label: 'PILLS', panel: pillsPanel },
+  { key: 'outlines', group: 'SHAPE', label: 'OUTLINES', panel: outlinesPanel },
   ...Object.entries(AREAS).map(([key, [label]]) => ({ key, label, panel: areaPanel(key) })),
   { key: 'export', label: 'EXPORT', panel: exportPanel },
 ]
@@ -1381,6 +1466,8 @@ function tokenTables() {
     <div class="table"><table><thead><tr><th>Step</th>${list.map(([name]) => `<th>${name}</th>`).join('')}</tr></thead><tbody>${primitive}</tbody></table></div>
     ${dot('SPACING', 1.1)}
     <div class="table"><table><thead><tr><th>Token</th><th>Value</th></tr></thead><tbody>${Object.entries(exportSpace(space)).map(([name, value]) => `<tr><th scope="row">${name}</th><td>${name.endsWith('columns') ? value : `${value}px`}</td></tr>`).join('')}</tbody></table></div>
+    ${dot('SHAPE', 1.1)}
+    <div class="table"><table><thead><tr><th>Token</th><th>Value</th></tr></thead><tbody>${Object.entries(shape.roles).map(([name, value]) => `<tr><th scope="row">${name}</th><td>${value}px</td></tr>`).join('')}</tbody></table></div>
     ${dot('TYPE', 1.1)}
     <div class="table"><table><thead><tr><th>Token</th><th>Family</th><th>Size</th><th>Line</th><th>Weight</th><th>Tracking</th><th>Use</th></tr></thead><tbody>${Object.entries(type.roles).map(([role, r]) => `<tr><th scope="row">text.${role}</th><td>${esc(r.family.split(',')[0].replace(/"/g, ''))}</td><td>${r.size}px</td><td>${r.line}px</td><td>${r.weight}</td><td>${r.tracking}em</td><td class="use">${ROLE_LABELS[role][1]}</td></tr>`).join('')}</tbody></table></div>
     ${groups}`
@@ -1390,14 +1477,15 @@ function screen(mode) {
   const typeVars = Object.entries(type.roles).flatMap(([role, t]) => [`--t-${role}-family:${esc(t.family)}`, `--t-${role}-size:${t.size * zoom}px`, `--t-${role}-line:${Math.round(t.line * zoom)}px`, `--t-${role}-weight:${t.weight}`, `--t-${role}-tracking:${t.tracking}em`]).join(';')
   const { roles: s } = space
   const spaceVars = [...Object.entries(s['layout.gap']).map(([k, v]) => [`gap-${k}`, v]), ...Object.entries(s['layout.inline']).map(([k, v]) => [`inline-${k}`, v]), ...Object.entries(s['layout.block']).map(([k, v]) => [`block-${k}`, v]), ['control-s', s['size.control'].s], ['control', s['size.control'].m], ['margin', s['layout.screen'].margin], ['gutter', s['layout.screen'].gutter]].map(([k, v]) => `--s-${k}:${v}px`).join(';')
+  const shapeVars = Object.entries(shape.roles).map(([name, value]) => `--r-${name.replace('.', '-')}:${value}px`).join(';')
   const grid = place === 'layout' ? `<div class="s-grid" aria-hidden="true">${'<i></i>'.repeat(config.space.columns)}</div>` : ''
-  const r = result.roles[mode], vars = { canvas: 'bg.canvas', surface: 'bg.surface', fg: 'fg.primary', fg2: 'fg.secondary', link: 'fg.link', on: 'fg.onAction', action: 'action.primary', focus: 'border.focus', subtle: 'bg.brandSubtle', selected: 'bg.selected', line: 'border.subtle', hero: 'bg.hero', onhero: 'fg.onHero', nav: 'fg.navActive', brand: 'fg.brand', gapmark: 'fg.danger', padmark: 'fg.success' }
+  const r = result.roles[mode], vars = { canvas: 'bg.canvas', surface: 'bg.surface', fg: 'fg.primary', fg2: 'fg.secondary', link: 'fg.link', on: 'fg.onAction', action: 'action.primary', focus: 'border.focus', subtle: 'bg.brandSubtle', selected: 'bg.selected', line: 'border.subtle', linefield: 'border.control', hero: 'bg.hero', onhero: 'fg.onHero', nav: 'fg.navActive', brand: 'fg.brand', gapmark: 'fg.danger', padmark: 'fg.success' }
   const style = Object.entries(vars).map(([k, role]) => `--p-${k}:${hex(r[role])}`).join(';')
   const row = (title, note, value, cls = '') => `<div class="s-row ${cls}" data-pad data-gap><span class="s-thumb"></span><span class="s-grow"><span class="s-title">${title}</span><span class="s-note">${note}</span></span>${value}</div>`
   const tag = (role, label) => `<span class="s-tag" style="color:${hex(r[role])}"><i class="s-dot" style="background:${hex(r[role])}"></i>${label}</span>`
   const later = r['action.secondary'] && SHARES[config.secondaryShare].tier >= 2
   const secondRow = r['bg.brandSecondarySubtle'] ? `<div class="s-banner" data-pad style="background:${hex(r['bg.brandSecondarySubtle'])}"><span>Second brand</span><span class="s-note" style="color:${hex(r['fg.brandSecondary'])}">New</span></div>` : ''
-  return `<div class="screen" data-gap style="${style};${typeVars};${spaceVars}">${grid}
+  return `<div class="screen" data-gap style="${style};${typeVars};${spaceVars};${shapeVars}">${grid}
     <header class="s-head"><h3>Today</h3><span class="s-avatar">A</span></header>
     <div class="s-search" data-pad>Search</div>
     <div class="s-chips" data-gap><span class="s-chip on">All</span><span class="s-chip">Saved</span><span class="s-chip">Recent</span></div>
@@ -1490,27 +1578,36 @@ function resize(key, width) {
   applyWindow()
 }
 
-function restoreSpace(previous) { config = { ...config, space: previous }; save(); update(true) }
+function restoreScope(scope, previous) { config = { ...config, [scope]: previous }; save(); update(true) }
 
-function setDensity(density) {
-  const before = config.space, hadCustom = Object.keys(before.custom).length
-  set({ space: { ...before, density, custom: {} } })
-  if (hadCustom) toast('Custom values cleared', () => restoreSpace(before))
+function setPreset(scope, field, value) {
+  const before = config[scope], hadCustom = Object.keys(before.custom).length
+  set({ [scope]: { ...before, [field]: value, custom: {} } })
+  if (hadCustom) toast('Custom values cleared', () => restoreScope(scope, before))
 }
 
-function setToken(id, value) {
+function resetCustom(scope) {
+  const before = config[scope]
+  set({ [scope]: { ...before, custom: {} } })
+  toast('Back to the preset', () => restoreScope(scope, before))
+}
+
+const STEPPERS = {
+  space: { step: () => config.space.unit, preset: (id) => { const cut = id.lastIndexOf('.'); return buildSpace({ ...config.space, custom: {} }).roles[id.slice(0, cut)][id.slice(cut + 1)] } },
+  shape: { step: () => 2, preset: (id) => SHAPE_STYLES[config.shape.style][id] },
+}
+
+function setToken(scope, id, value) {
   const next = Math.min(STEP_LIMIT, Math.max(0, Math.round(value)))
   if (!Number.isFinite(next)) return render()
-  const [group, name] = [id.slice(0, id.lastIndexOf('.')), id.slice(id.lastIndexOf('.') + 1)]
-  const { [id]: _, ...custom } = config.space.custom
-  const preset = buildSpace({ ...config.space, custom: {} }).roles[group][name]
-  set({ space: { ...config.space, custom: next === preset ? custom : { ...custom, [id]: next } } })
+  const { [id]: _, ...custom } = config[scope].custom
+  set({ [scope]: { ...config[scope], custom: next === STEPPERS[scope].preset(id) ? custom : { ...custom, [id]: next } } })
 }
 
-function stepToken(id, by) {
-  const { unit } = config.space
+function stepToken(scope, id, by) {
+  const unit = STEPPERS[scope].step()
   const current = +document.querySelector(`[data-token="${id}"]`).value
-  setToken(id, by > 0 ? (Math.floor(current / unit) + 1) * unit : (Math.ceil(current / unit) - 1) * unit)
+  setToken(scope, id, by > 0 ? (Math.floor(current / unit) + 1) * unit : (Math.ceil(current / unit) - 1) * unit)
   document.querySelector(`[data-step="${id}"][data-by="${by}"]`)?.focus()
 }
 
@@ -1542,6 +1639,7 @@ function update(rerender) {
   result = expand(config)
   type = buildType(config.type)
   space = buildSpace(config.space)
+  shape = buildShape(config.shape, space.roles['size.control'].m)
   renderPreviews()
   if (rerender) render()
 }
@@ -1681,7 +1779,7 @@ $('next').onclick = () => {
   go(neighbor(1))
 }
 
-const fullExport = () => ({ ...exportTokens(config, result), type: exportType(type), space: exportSpace(space) })
+const fullExport = () => ({ ...exportTokens(config, result), type: exportType(type), space: exportSpace(space), shape: shape.roles })
 const json = () => JSON.stringify(fullExport(), null, 2)
 function toggleTheme(mode) {
   const other = mode === 'light' ? 'dark' : 'light'
@@ -1703,11 +1801,6 @@ const ACTIONS = {
   addSecondary: () => {
     set({ secondary: suggestSecondary(config.brand) }, false)
     selectSlot('secondary')
-  },
-  resetSpace: () => {
-    const before = config.space
-    set({ space: { ...before, custom: {} } })
-    toast('Back to the preset', () => restoreSpace(before))
   },
   removeSecondary: () => {
     const previous = config.secondary
@@ -1791,7 +1884,7 @@ document.addEventListener('input', (e) => {
   if (e.target.id === 'vivid') { $('vividValue').innerHTML = dot(`${Math.round(e.target.value * 100)}%`, 1.1); set({ vivid: +e.target.value }, false); $('panel').querySelector('.ramp').outerHTML = rampHtml(result.ramp.colors, { anchor: result.ramp.anchor }) }
 })
 document.addEventListener('change', (e) => {
-  if (e.target.dataset.token) return setToken(e.target.dataset.token, parseFloat(e.target.value))
+  if (e.target.dataset.token) return setToken(e.target.dataset.stepScope, e.target.dataset.token, parseFloat(e.target.value))
   if (e.target.id === 'hex') { e.target.value = config[slot] }
   if (e.target.id === 'customFont') {
     const name = e.target.value.replace(/["<>;{}]/g, '').trim()
@@ -1806,9 +1899,11 @@ document.addEventListener('click', (e) => {
   const share = e.target.closest('[data-share]')
   if (share) return set({ secondaryShare: share.dataset.share })
   const density = e.target.closest('[data-density]')
-  if (density) return setDensity(density.dataset.density)
+  if (density) return setPreset('space', 'density', density.dataset.density)
+  const corner = e.target.closest('[data-corner]')
+  if (corner) return setPreset('shape', 'style', corner.dataset.corner)
   const step = e.target.closest('[data-step]')
-  if (step) return stepToken(step.dataset.step, +step.dataset.by)
+  if (step) return stepToken(step.dataset.stepScope, step.dataset.step, +step.dataset.by)
   const example = e.target.closest('[data-example]')
   if (example) return loadExample(example.dataset.example)
   const tab = e.target.closest('[data-slot]')
@@ -1832,8 +1927,9 @@ document.addEventListener('click', (e) => {
     const role = tile.closest('[data-role]').dataset.role
     return set({ overrides: { ...config.overrides, [role]: { ...config.overrides[role], [editing]: +tile.dataset.i } } })
   }
-  const action = e.target.closest('[data-action]')?.dataset.action
-  if (action) ACTIONS[action]()
+  const actionEl = e.target.closest('[data-action]')
+  if (actionEl?.dataset.action === 'resetCustom') return resetCustom(actionEl.dataset.scopeName)
+  if (actionEl) ACTIONS[actionEl.dataset.action]()
 })
 
 update(true)
